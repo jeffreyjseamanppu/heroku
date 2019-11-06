@@ -8,8 +8,8 @@ weatherApp.addEventListener('submit', (e) => {
 
   const location = query.value
 
-
-  fetch('http://localhost:3000/weather?address=' + location).then((response) => {
+  var PORT = process.env.PORT || 3000;
+  fetch('http://localhost:' + PORT + '/weather?address=' + location).then((response) => {
     response.json().then((data) => {
       if(data.error) {
         console.log(data.error)
